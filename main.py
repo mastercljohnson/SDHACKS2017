@@ -76,11 +76,11 @@ def index():
                 n=0
                 reporteye = genomelink.Report.fetch(name='eye-color', population='european', token='6ProfWS0SNs4gTXmEAbrVBByQWyPhO')
                 if (report.summary['score']> 2 & eyecolorbool):
-                    print('genome prediction accurate')
+                    return'genome prediction accurate'
                 else :
-                    print('genome prediction inaccurate')
+                    return 'genome prediction inaccurate'
             else:
-                print("cannot retrieve eye color data")
+                return "cannot retrieve eye color data"
 
 
     #for trait in wordlist:
