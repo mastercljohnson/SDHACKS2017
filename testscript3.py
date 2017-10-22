@@ -8,27 +8,19 @@ data = {
 
 r = requests.post('http://www.betafaceapi.com/service_json.svc/GetImageInfo', json = data)
 b = r.json().get('faces')
+print(b)
 def checkKeyValuePairExistence(dic, key, value):
         try:
             #print(dic[key])
             return dic[key] == value
         except KeyError:
             return False
-def checkKeyValuePairExistence2(dic, key):
-        try:
-            for i in range(len(dic)):
-                if (dic[i] == key):
-                    print(dic[i])
-                    return true
-        except KeyError:
-            return False
 
-for dic in b[1]:
-    print(b[1]['tags'])
-    for e in b[1]['tags']:
-        d = checkKeyValuePairExistence(e, "name", "eye color")
-        print(d)
-        print(e)
+
+for e in b[0]['tags']:
+    d = checkKeyValuePairExistence(e, "name", "color eyes")
+    print(d)
+    print(e)
 #c=checkKeyValuePairExistence2(b[1],"tags" )
 
 

@@ -54,48 +54,48 @@ def index():
     try :
 
         b = r2.json().get('faces')
-        c = ''
-        for dic in b[1]:
-            for e in b[1]['tags']:
-                d = checkKeyValuePairExistence(e, "name", "eye color")
-                if (d):
-                    wordlist = [
-            #'red-wine-liking'
-                    #, 'smoking-behavior'
-                    #,'caffeine-metabolite-ratio'
-                    #,'endurance-performance'
-                    #,
-                    'eye-color'
-                    #,'red-hair'
-                    #, 'black-hair'
-                    #, 'skin-pigmentation'
-                    #,'freckles'
-                   # ,'openness'
-            ]
-                    eyecolorbool = (c == "533f35")
-                    n=0
-                    reporteye = genomelink.Report.fetch(name='eye-color', population='european', token='6ProfWS0SNs4gTXmEAbrVBByQWyPhO')
-                    if (report.summary['score']> 2 & eyecolorbool):
-                        print('genome prediction accurate')
-                    else :
-                        print('genome prediction inaccurate')
-                else:
-                    print("cannot retrieve eye color data")
+
+        for e in b[0]['tags']:
+            d = checkKeyValuePairExistence(e, "name", "color eyes")
+            c = e
+            if (d):
+                wordlist = [
+        #'red-wine-liking'
+                #, 'smoking-behavior'
+                #,'caffeine-metabolite-ratio'
+                #,'endurance-performance'
+                #,
+                'eye-color'
+                #,'red-hair'
+                #, 'black-hair'
+                #, 'skin-pigmentation'
+                #,'freckles'
+               # ,'openness'
+        ]
+                eyecolorbool = (c == "533f35")
+                n=0
+                reporteye = genomelink.Report.fetch(name='eye-color', population='european', token='6ProfWS0SNs4gTXmEAbrVBByQWyPhO')
+                if (report.summary['score']> 2 & eyecolorbool):
+                    print('genome prediction accurate')
+                else :
+                    print('genome prediction inaccurate')
+            else:
+                print("cannot retrieve eye color data")
 
 
-        #for trait in wordlist:
-            #report = genomelink.Report.fetch(name=trait, population='european', token='6ProfWS0SNs4gTXmEAbrVBByQWyPhO')
+    #for trait in wordlist:
+        #report = genomelink.Report.fetch(name=trait, population='european', token='6ProfWS0SNs4gTXmEAbrVBByQWyPhO')
 
-            #print(report.summary['score'])
-            #print(report.summary['text'])
-
-        
-            
-
-        
+        #print(report.summary['score'])
+        #print(report.summary['text'])
 
 
-            
+
+
+
+
+
+
     except :
         return 'no face found'
 
