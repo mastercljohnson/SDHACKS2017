@@ -19,7 +19,7 @@ while(cap.isOpened()):
             retval, buffer = cv2.imencode('.jpg', frame)
             cv2.imwrite("b64.jpg",frame)
             jpg_as_text = base64.b64encode(buffer)
-            jpg_as_text = jpg_as_text[2:len(jpg_as_text)-1]
+            #jpg_as_text = jpg_as_text[2:len(jpg_as_text)-1]
             file = open("b64.txt", "w")
 
             jpg_as_text= str(jpg_as_text)

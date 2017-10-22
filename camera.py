@@ -16,9 +16,10 @@ def use():
 
 
             cv2.imshow('frame',frame)
-            if cv2.waitKey(20) :
+            if cv2.waitKey(420) :
                 retval, buffer = cv2.imencode('.jpg', frame)
                 jpg_as_text = base64.b64encode(buffer)
+
                 return(jpg_as_text)
 
         else:
@@ -26,8 +27,9 @@ def use():
 
 # Release everything if job is finished
     cap.release()
-    #out.release()
     cv2.destroyAllWindows()
+    #out.release()
+
 
 if __name__ == '__main__':
     # test1.py executed as script

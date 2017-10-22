@@ -2,6 +2,7 @@ from flask import Flask, render_template, Response
 from camera import use
 import requests
 import json
+import time
 
 app = Flask(__name__)
 
@@ -49,7 +50,8 @@ def index():
 	"api_secret":"171e8465-f548-401d-b63b-caf0dc28df5f",
         "img_uid" : a
         }
-
+    
+    time.sleep(1)
     r2 = requests.post('http://www.betafaceapi.com/service_json.svc/GetImageInfo', json = form)
     try :
 
