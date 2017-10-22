@@ -32,7 +32,7 @@ def index():
 	87,
 	48,
 	61],
-	"image_base64":y,
+	"image_base64":y[2:len(y)-1],
 	"original_filename":"face.jpg",
 	"url":""
 }
@@ -43,3 +43,4 @@ def index():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
+
